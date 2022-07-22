@@ -15,9 +15,6 @@ ARG ROOT_BIN=root_v6.26.04.Linux-ubuntu22-x86_64-gcc11.2.tar.gz
 WORKDIR /opt
 
 RUN apt-get update -qq \
- #&& ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
- #&& apt-get -y install $(cat packages) wget\
- #&& rm -rf /var/lib/apt/lists/*\
  && wget https://root.cern/download/${ROOT_BIN} \
  && tar -xzvf ${ROOT_BIN} \
  && rm -f ${ROOT_BIN} \
