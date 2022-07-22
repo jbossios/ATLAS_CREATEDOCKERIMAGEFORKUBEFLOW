@@ -10,6 +10,9 @@ RUN apt-get -yq install openssh-client
 RUN apt-get -yq install vim
 RUN pip3 install -r /requirements.txt
 
+ARG ROOT_BIN=root_v6.26.04.Linux-ubuntu22-x86_64-gcc11.2.tar.gz
+
+WORKDIR /opt
 
 RUN apt-get update -qq \
  #&& ln -sf /usr/share/zoneinfo/UTC /etc/localtime \
